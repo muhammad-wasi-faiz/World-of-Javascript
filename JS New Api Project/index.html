@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript News</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- cd "D:\web yt\projects\tailwind" -->
+    <!-- npx tailwindcss -i ./src/input.css -o ./dist/js/news-api/output.css --watch -->
+</head>
+<body class="">
+    <nav class="flex justify-around items-center bg-gray-200 h-[80px] w-full">
+
+        <img class="w-[120px]" src=".\assets\image.png" alt="new-logo">
+
+        <ul class="decoration-none flex gap-6 cursor-pointer">
+            <li id="sports">Sports</li>
+            <li id="politics">Politics</li>
+            <li id="tech">Technology</li>
+        </ul>
+
+        <div>
+            <input id="inp" class="p-2 border-2 border-black rounded-xl " type="text" placeholder="eg. T20 WorldCup">
+            <button id="btn" class="bg-indigo-600 text-white p-2 rounded-lg cursor-pointer">Seacrh</button>
+        </div>
+
+    </nav>
+        <main class="mt-20">
+            <div class="mx-auto w-[1180px] flex flex-wrap gap-6 justify-center card hover:cursor-pointer" id="cards">
+    
+
+                </div>
+
+        </main>
+
+    <template id="tempcards">
+          <div class=" w-[350px] card hover:shadow-2xl rounded-xl overflow-hidden border-1 border-gray-200 hover:-translate-y-2 transition-transform ">
+        <div class="flex flex-col">
+            <div class="w-[350px] overflow-hidden">
+                <img src=".\assets\pic.webp" alt="" id="img">
+            </div>
+            <div class="flex flex-col gap-3 p-3">
+                <h3 id="title" class="text-2xl">Title</h3>
+                <h6 id="source" class="text-md">Source</h6>
+                <p id="data" class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. At culpa repudiandae omnis rem, inventore impedit perspiciatis expedita maiores dicta error.</p>
+            </div>
+        </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
