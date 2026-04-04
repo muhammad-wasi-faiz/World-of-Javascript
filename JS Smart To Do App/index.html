@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- cd "D:\web yt\projects\tailwind" -->
+     <!-- npx tailwindcss -i ./src/input.css -o ./dist/js/to-do/output.css --watch -->
+</head>
+<body class="flex justify-center bg-pink-300">
+   
+        <div class="flex flex-col gap-4 justify-center w-[600px] bg-white mt-[100px] p-6 rounded-4xl ">
+
+            <div>
+                <h1 class="text-4xl font-bold">
+                Smart To Do Cards 
+            </h1>
+            </div>
+    
+            
+            <div class="bg-gray-300 rounded-4xl flex justify-between ">
+                    <input id="inp1" class="border-none outline-none bg-transparent rounded-4xl p-4 pl-6 w-[100%]" type="text" placeholder="Add Your Task">
+                    <button id="btn" class="bg-blue-600 rounded-4xl py-4 px-7 text-white cursor-pointer" type="button">ADD</button>
+            </div>
+    
+            <div class="w-[500px]">
+
+                    <ul id="list">
+                        
+                    </ul>
+
+                <textarea  id="area" type="text" class="focus:outline-none focus:ring-0 focus:border-none h-[200px] border-box w-[550px] hidden"></textarea>
+                <button id="save" class="border-2 border-black p-2 rounded-xl btn hidden">Save</button>
+                <button id="edit" class="border-2 border-black p-2 rounded-xl btn hidden" >Edit</button>
+                <button id="imp" class="border-2 border-black p-2 rounded-xl btn hidden" >Highlight Notes</button>
+                <button id="del" class="border-2 border-black p-2 rounded-xl btn hidden" >Delete Task</button>
+
+
+            </div>
+                
+        </div>
+            
+            <!-- <input class="rounded-full" type="checkbox">
+    <p>JavaScript</p>
+    <button type="button"><i class="fa-solid fa-x"></i></button> -->
+   
+    <script src="https://kit.fontawesome.com/501c54cdfe.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
