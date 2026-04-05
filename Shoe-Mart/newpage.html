@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PRODUCT PREVIEW</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="icon" type="image/png" href="./assets/logoo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/501c54cdfe.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-sans text-[#353535] mx-10">
+
+  <!-- Navbar -->
+  <header class="mx-10">
+    <nav class="mb-2 p-3 flex flex-col lg:flex-row justify-between items-center">
+      <div id="home">
+        <a class="flex justify-center" href="index.html">
+          <img class="w-[100px] p-2" src="./assets/logoo.jpg" alt="logo">
+        </a>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="lg:flex lg:gap-[15px] xl:gap-[25px] hidden">
+          <a class="animate-pulse text-pink-500 font-extrabold hover:cursor-pointer relative inline-block pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[3.5px] after:w-0 after:bg-pink-500 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full" href="newarrivals.html">New Arrivals</a>
+          <a class="relative inline-block pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[3.5px] after:w-0 after:bg-pink-500 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full" href="index.html">Home</a>
+          <a class="relative inline-block pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[3.5px] after:w-0 after:bg-pink-500 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full" href="#shoes">Shoes</a>
+          <a class="relative inline-block pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[3.5px] after:w-0 after:bg-pink-500 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full" href="bags.html">Bags</a>
+          <a class="relative inline-block pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[3.5px] after:w-0 after:bg-pink-500 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full" href="cart.html">My Cart</a>
+          <a class="relative inline-block pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[3.5px] after:w-0 after:bg-pink-500 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full" href="checkout.html">Checkout</a>
+        </div>
+        <div class="flex gap-[10px]">
+          <a href="login.html">
+            <input class="hover:cursor-pointer border-[1.5px] hover:bg-pink-500 hover:border-[2px] hover:text-white hover:font-bold border-black text-black py-2 px-4" type="submit" value="Sign-in">
+          </a>
+          <a href="signup.html">
+            <input class="hover:cursor-pointer border-[1.5px] hover:border-[2px] hover:font-bold border-black text-white bg-pink-500 py-2 px-4" type="submit" value="Sign-up">
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <hr>
+
+  <!-- Main Content -->
+  <main>
+    <h1 class="font-extrabold text-5xl my-10">PRODUCT PREVIEW</h1>
+    <hr>
+
+    <div class="flex lg:flex-row flex-col">
+      <!-- Product Image -->
+      <div class="flex flex-col items-center basis-2/3 pb-10">
+        <div class="flex gap-3 justify-center items-center mt-5 w-full">
+          <div class="w-[50%]">
+            <img data-pv-image src="./assets/logoo.jpg" alt="Product image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="flex flex-col gap-4 basis-1/3 pl-4 lg:border-l border-black pb-10 border-t">
+        <h2 class="text-2xl my-6">PRODUCT DETAILS</h2>
+
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-2">
+            <p class="font-bold text-2xl" data-pv-title>Loading...</p>
+          </div>
+
+          <h2 class="text-lg font-bold" data-pv-category>
+            <span class="font-normal">CATEGORIES</span> 
+            <span><i class="fa-solid fa-chevron-right"></i></span> —
+          </h2>
+
+          <p class="text-lg" data-pv-old-wrap style="display:none;">
+            RS. <del data-pv-old></del>
+          </p>
+
+          <p class="font-semibold flex gap-4 text-3xl">
+            <span data-pv-price>RS. 0</span>
+            <span class="text-pink-500" data-pv-discount></span>
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <label class="font-semibold">QUANTITY</label>
+          <input id="pv-qty" class="border-black border-[1.5px] w-[25%] rounded-sm px-3 py-1" type="number" min="1" value="1">
+        </div>
+
+        <div>
+          <button id="buyNow" class="bg-pink-500 text-white w-full p-2">BUY NOW</button>
+        </div>
+
+        <div>
+          <button id="addToCart" class="border-pink-500 bg-white text-pink-500 w-full p-2">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div id="get-in-touch" class="flex lg:flex-row flex-col items-center justify-between lg:items-start gap-10 py-10 md:gap-12 lg:gap-20 border-t-[1px]">
+      <div>
+        <p class="font-bold text-4xl mb-8 text-center">Get In Touch</p>
+        <div class="flex md:flex-row flex-col items-center text-center md:text-start justify-center md:items-start gap-20">
+          <div class="flex flex-col gap-3">
+            <p class="font-bold">INFORMATION</p>
+            <a href="#">Online Order Tracking</a>
+            <a href="#">Size Chart</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Returns & Exchange Policy</a>
+            <a href="#">Discount Policy</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <p class="font-bold">About Us</p>
+            <a href="#">Our Story</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Form -->
+      <div class="w-[300px] sm:w-[500px] md:w-[700px] lg:w-[400px] flex flex-col items-center justify-center">
+        <p class="font-bold text-4xl">Give Feedback</p>
+        <div class="bg-white mt-8 w-full">
+          <form>
+            <div class="flex flex-col lg:flex-row gap-3">
+              <div class="w-full lg:w-[50%]">
+                <p class="text-[14px] pb-[15px] block">Your Name</p>
+                <input class="text-[14px] p-2 border-[1px] border-black rounded-sm w-[100%]" id="name" placeholder="Enter Your Name" type="text" required>
+              </div>
+              <div>
+                <p class="text-[14px] pb-[15px]">Your Email</p>
+                <input class="text-[14px] p-2 border-[1px] border-black rounded-sm w-[100%]" id="email" placeholder="Enter Your Email" type="email" required>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-[14px] pb-[15px] mt-[25px]">Your Message</p>
+              <textarea class="pt-[8px] pl-[15px] text-[14px] h-[150px] w-full border-[1px] border-black rounded-sm" id="message" placeholder="Enter Your Message"></textarea>
+            </div>
+
+            <div class="pt-[20px] flex justify-center">
+              <input class="bg-pink-500 py-3 px-9 rounded-[2px] hover:bg-pink-700 text-[14px] text-white" type="submit" value="Submit Feedback">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center mb-3">
+      <p class="font-extralight">2025 Shoe Mart | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script type="module" src="./app.js"></script>
+
+</body>
+</html>

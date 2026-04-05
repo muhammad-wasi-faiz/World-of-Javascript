@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="output.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="./assets/logoo.png">
+</head>
+<body class="bg-[url('./assets/wed1.jpg')] bg-center bg-no-repeat bg-cover h-[100vh] flex justify-center items-start">
+
+  <div class="flex flex-col gap-5 items-center justify-center mt-10">
+
+    <!-- Logo and Title -->
+    <div class="flex gap-4 justify-center items-center">
+      <img class="w-[80px]" src="./assets/logoo.png" alt="Logo">
+      <p class="text-4xl font-extrabold text-white text-center">Your Steps, Your Story</p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="bg-white border-2 border-black rounded-lg p-5 w-[350px]">
+      <div class="text-center mb-4">
+        <h2 class="font-bold text-3xl">Welcome Back!</h2>
+        <p class="font-medium text-lg">Login to Enjoy Big Deals</p>
+      </div>
+
+      <form id="loginForm" class="flex flex-col gap-3" action="login.php" method="POST">
+        <!-- Email -->
+        <div>
+          <label for="mail">Email</label><br>
+          <input id="mail" type="email" placeholder="abc2@gmail.com" required
+                 class="border-2 border-black rounded-md p-2 w-full">
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="pass">Password</label><br>
+          <input id="pass" type="text" placeholder="at least 8 characters" required
+                 class="border-2 border-black rounded-md p-2 w-full">
+        </div>
+
+        <!-- Submit -->
+        <div>
+          <input id="submit" type="submit" value="Login"
+                 class="p-2 rounded-md bg-pink-500 w-full text-white cursor-pointer">
+        </div>
+
+        <!-- Signup Link -->
+        <div class="text-center">
+          Don't Have An Account? <br>
+          <a href="signup.php" class="underline text-pink-400 hover:cursor-pointer">Create Account</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Inline JS -->
+  <script>
+    // ====== Test user ======
+    const USERS_KEY = 'sm_users';
+    const CURRENT_USER_KEY = 'sm_current_user';
+    if (!localStorage.getItem(USERS_KEY)) {
+      const testUser = [{name: "Test User", email: "test@test.com", password: "12345678"}];
+      localStorage.setItem(USERS_KEY, JSON.stringify(testUser));
+    }
+
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('mail').value.trim();
+      const password = document.getElementById('pass').value;
+      const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+      if (!user || user.password !== password) {
+        alert('Invalid email or password.');
+        return;
+      }
+      // Save current user
+      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify({name: user.name, email: user.email}));
+      alert('Logged in successfully!');
+      window.location.href = 'index.html'; // redirect to home page
+    });
+  </script>
+
+</body>
+</html>
